@@ -1,0 +1,18 @@
+<div>
+    <input #name type="text" name="name">
+    <button (click)="clicked($event, name.value)">Click me</button>
+</div>
+
+<br>
+<button (click)="getMessages()" class="btn-success">Get messages</button>
+
+<div>
+    <h3>You have {{ messages.length }} new messages.</h3>
+    <ul>
+        <li *ngFor="let msg of messages">
+            <h3>Subject: {{ msg.subject }}</h3>
+            <h4>From: {{ msg.from }}</h4>
+            <p><i>{{ msg.text }}</i></p>
+        </li>
+    </ul>
+</div>
